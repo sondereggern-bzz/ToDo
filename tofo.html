@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formular mit Assistenzfunktion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form name="register">
+  <legend>Todo-er</legend>
+  <br><label for='givenname'>Task_Name</label>
+  <br><input id='givenname' name='givenname' type='text' required/>
+
+  <button type='submit' style="font-size: 1rem">Absenden</button>
+  <button type='reset'style="font-size: 1rem">Zurücksetzen</button>
+  <button type='reset' style="font-size: 1rem" id="deleteAll">Delete All</button>
+
+</form>
+
+<dl id="output">
+</dl>
+<script>
+    var count = 0
+    const output = document.getElementById("output")
+
+    document.forms.register.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const childElement = document.createElement("dd")
+        const childElementP = document.createElement("p")
+        const data = new FormData(event.target)
+        childElementP.innerText = data.get('givenname')
+        childElement.append(childElementP)
+
+        // const childElement = document.createElement("dd")
+        // const data = new FormData(event.target)
+        // childElement.innerText = data.get('givenname')
+
+        const doneButton = document.createElement("input")
+        doneButton.type = "checkbox"
+        doneButton.classList.add("checkbox")
+        childElement.append(doneButton)
+        doneButton.addEventListener("click", function (event) {
+            childElement.classList.toggle("done")
+        })
+        const editButton = document.createElement("button")
+        editButton.innerText = "edit"
+
+        childElement.append(editButton)
+        editButton.addEventListener("click", function (event) {
+            if (childElementP.contentEditable === "true") {
+                childElementP.contentEditable = "false"
+            } else {
+                childElementP.contentEditable = "true"
+            }
+        })
+
+
+        const deleteButton = document.createElement("button")
+        deleteButton.classList.add("deleteButton")
+        deleteButton.innerText = "x"
+        childElement.append(deleteButton)
+        deleteButton.addEventListener("click", function (event) {
+            childElement.remove()
+        })
+
+        output.appendChild(childElement)
+        count += 1
+        document.getElementById("givenname").value = ''
+
+
+
+
+        // document.getElementById("emailOutput").innerHTML = `<a href="mailto:${data.get('Email')}">${data.get('Email')}</a>`;
+        // document.getElementById("wohnortOutput").innerText = data.get('residence')
+        // document.getElementById("AnreiseOutput").innerText = data.get('Arbeitsbereich')
+        // document.getElementById("cardoutput").innerText = data.get('Zahlmethode')
+        // document.getElementById("euOutput").innerText = data.get('Natio[]')
+
+        // })
+    })
+
+    // document.forms.register.addEventListener('invalid', function (event) {
+    // 	debugger
+    // }, true)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+*  {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: deeppink;
+    margin: 0 auto;
+    max-width: 52rem;
+    padding: 50px;
+    /*animation: weeee 0.1s infinite;*/
+}
+form {
+    background-color: greenyellow;
+    margin: 10px;
+    border: greenyellow 10px solid;
+}
+.done {
+    text-decoration-line: line-through;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    min-height: 100vh;
+}
+dl {
+
+    /*animation: weeew 0.1s infinite;*/
+    padding: 20px;
+    font-size: 111%;
+}
+@keyframes weeee {
+    0% {
+        background-color: deeppink;
+    }
+    100% {
+        background-color: white;
+    }
+}
+@keyframes weeew {
+    0% {
+        background-color: blue;
+    }
+    100% {
+        background-color: red;
+    }
+}
+dd {
+    padding: 10px;
+    background-color: lightblue;
+    margin: 10px;
+    color: black;
+}
+legend {
+    font-size: 2rem;
+    font-weight: bold;
+}
+input {
+    font-size: 1rem;
+}
+label {
+    font-size: 1.2rem;
+}
+.deleteButton {
+    margin: 0 5px;
+    width: 20px;
+}
+.doneButton {
+    width: 150%;
+}
+input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+}
