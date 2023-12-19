@@ -1,2 +1,2 @@
 # ToDo (WIP)
-Simple (and ugly) ToDO List 
+Very Simple ToDo-List 
