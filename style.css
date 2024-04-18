@@ -3,17 +3,22 @@
     padding: 0;
 }
 
+html {
+    background-color: white;
+}
+
 body {
-    background-color: deeppink;
+    background-color: lightblue;
     margin: 0 auto;
+    min-height: 100vh;
     max-width: 52rem;
     padding: 50px;
     /*animation: weeee 0.1s infinite;*/
 }
 form {
-    background-color: greenyellow;
+    background-color: lightgray;
     margin: 10px;
-    border: greenyellow 10px solid;
+    border: lightgray 10px solid;
 }
 .done {
     text-decoration-line: line-through;
@@ -49,7 +54,7 @@ dl {
 }
 dd {
     padding: 10px;
-    background-color: lightblue;
+    background-color: lightgreen;
     margin: 10px;
     color: black;
 }
@@ -63,14 +68,54 @@ input {
 label {
     font-size: 1.2rem;
 }
-.deleteButton {
-    margin: 0 5px;
-    width: 20px;
-}
+
+
 .doneButton {
     width: 150%;
 }
 input[type="checkbox"] {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+/* Style for the edit, delete, and checkbox buttons */
+button,
+input[type="checkbox"] {
+    padding: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/* Adjust the position of the buttons */
+button {
+    margin: 5px;
+}
+
+/* Style the delete button a bit differently */
+.deleteButton {
+    background-color: #ff6666; /* Light red */
+    color: white;
+    padding: 3px; /* Adjust the padding for a smaller background */
+    width: 20px;
+}
+
+/* Style the checkbox to be more visually appealing */
+input[type="checkbox"] {
+    margin: 5px;
+    margin-bottom: 6px;
+    padding: 3px;
+    vertical-align: middle;
+}
+
+/* Style the edit button with a smaller background */
+.editButton {
+    background-color: white;
+    color: black;
+    padding: 3px; /* Adjust the padding for a smaller background */
+}
+
+p {
+    padding: 5px;
+    font-family: Arial;
 }
